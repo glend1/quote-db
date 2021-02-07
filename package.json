@@ -2,11 +2,13 @@
   "name": "with-mongodb",
   "version": "0.1.0",
   "scripts": {
+    "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "mongodb": "^3.5.9",
     "next": "latest",
     "react": "^16.13.1",
