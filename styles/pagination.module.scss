@@ -1,0 +1,9 @@
+.pagination {
+    @apply mx-auto my-1 p-1 w-min bg-purple-300 rounded-full;
+    a {
+        @apply px-1;
+        &.bigger {
+            @apply text-2xl leading-4;
+        }
+    }
+}
