@@ -22,5 +22,8 @@
     "swr": "^0.4.2",
     "tailwindcss": "^2.0.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13"
+  }
 }
