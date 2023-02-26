@@ -1,6 +1,6 @@
 #navigation {
     @apply bg-purple-300 rounded-full w-11/12 m-auto my-4;
-    ul { @apply grid grid-cols-6 gap-4 items-center; }
-    a, form { @apply p-4 bg-pink-400 text-center; }
+    ul { @apply grid grid-cols-4 items-center; }
+    a, form { @apply p-4 text-center; }
     li:last-child { @apply col-span-2 }
   }

@@ -1,20 +1,28 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
+import { Connection } from '../components/connection'
+import { LoginForm } from '../components/loginform'
 import { connectToDatabase } from '../util/mongodb'
+import { AddQuote } from '../components/addquote'
+import { setAuthChangeEvent } from '../util/client.firebase-auth'
 
-export default function Add({ isConnected}) {
+export default function Add({ isConnected }) {
+  const [user, setUser] = useState()
+  useEffect(() => {
+    setAuthChangeEvent(setUser)
+  }, [])
   return (
-      <main>
+    <main>
       <Head>
         <title>QuoteApp</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isConnected ? (
-          <>
-          </>
-        ) : (
-          <h2>You are NOT connected to MongoDB</h2>
-        )}
-      </main>
+      <Connection isConnected={isConnected} />
+      <div className='flex justify-center flex-col items-center'>
+        {user && <AddQuote user={user} />}
+        <LoginForm user={user} />
+      </div>
+    </main >
   )
 }
 
